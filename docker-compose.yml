@@ -1,0 +1,63 @@
+# MediStock AI — local two-service stack
+#
+#   docker compose up --build
+#   API:       http://127.0.0.1:8000/docs
+#   Dashboard: http://127.0.0.1:8501
+#
+# Prerequisites: artifacts/v1/ exists (run the training pipeline first). The bundle
+# is mounted read-only so the container always serves the artifact you can inspect.
+
+services:
+  api:
+    build: .
+    image: medistock-api:local
+    container_name: medistock-api
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./artifacts:/app/artifacts:ro
+      - ./data:/app/data
+      - ./reports/logs:/app/reports/logs
+    environment:
+      MEDISTOCK_ENVIRONMENT: production
+      MEDISTOCK_LOG_JSON: "true"
+      MEDISTOCK_ARTIFACT_VERSION: v1
+      MEDISTOCK_DB_URL: sqlite:////app/data/medistock.db
+    healthcheck:
+      test:
+        - CMD
+        - python
+        - -c
+        - "import urllib.request,sys; sys.exit(0 if urllib.request.urlopen('http://127.0.0.1:8000/health', timeout=4).status == 200 else 1)"
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 25s
+    restart: unless-stopped
+
+  dashboard:
+    build: .
+    image: medistock-api:local
+    container_name: medistock-dashboard
+    depends_on:
+      api:
+        condition: service_healthy
+    ports:
+      - "8501:8501"
+    volumes:
+      - ./artifacts:/app/artifacts:ro
+      - ./reports:/app/reports:ro
+    environment:
+      MEDISTOCK_ENVIRONMENT: production
+      # Container-to-container URL, not localhost: the dashboard calls the API
+      # from inside a different container.
+      MEDISTOCK_API_BASE_URL: http://api:8000
+    command:
+      - streamlit
+      - run
+      - dashboard/streamlit_app.py
+      - --server.port=8501
+      - --server.address=0.0.0.0
+      - --server.headless=true
+      - --server.fileWatcherType=none
+    restart: unless-stopped

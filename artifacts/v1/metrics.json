@@ -1,0 +1,275 @@
+{
+  "selected_model": "hist_gradient_boosting",
+  "baseline_model": "seasonal_naive_30d",
+  "selection_metric": "mean_rolling_origin_wape_pre_test",
+  "selection_scores": {
+    "seasonal_naive_30d": 0.135991,
+    "random_forest": 0.125715,
+    "hist_gradient_boosting": 0.117977,
+    "moving_average_90d": 0.189666
+  },
+  "selection_rationale": "Selected 'hist_gradient_boosting': lowest mean rolling-origin WAPE (0.1180) across 3 expanding-window folds that end before 2025-08-01. Single-window validation WAPE was also recorded (0.136) but was not used to select, because differences between the strongest candidates on one 600-row window were within noise. The test set was scored once afterwards (WAPE 0.108).",
+  "models": [
+    {
+      "model_name": "seasonal_naive_30d",
+      "mae": 39.965,
+      "rmse": 52.520741934338034,
+      "wape": 0.13793480324200572,
+      "bias": -0.10833333333333334,
+      "n_observations": 600,
+      "split": "validation"
+    },
+    {
+      "model_name": "moving_average_90d",
+      "mae": 57.76611111111112,
+      "rmse": 75.1829681756693,
+      "wape": 0.19937338096251603,
+      "bias": -5.228333333333333,
+      "n_observations": 600,
+      "split": "validation"
+    },
+    {
+      "model_name": "random_forest",
+      "mae": 39.07428392111033,
+      "rmse": 51.846993193523346,
+      "wape": 0.1348605946323188,
+      "bias": 4.581631149539357,
+      "n_observations": 600,
+      "split": "validation"
+    },
+    {
+      "model_name": "hist_gradient_boosting",
+      "mae": 39.50994523230303,
+      "rmse": 52.44921052825976,
+      "wape": 0.13636423174578108,
+      "bias": 5.983151259027387,
+      "n_observations": 600,
+      "split": "validation"
+    },
+    {
+      "model_name": "seasonal_naive_30d",
+      "mae": 36.32083333333333,
+      "rmse": 48.14448739644724,
+      "wape": 0.1322310288596458,
+      "bias": 8.679166666666667,
+      "n_observations": 480,
+      "split": "test"
+    },
+    {
+      "model_name": "moving_average_90d",
+      "mae": 58.89791666666667,
+      "rmse": 77.50024940222713,
+      "wape": 0.21442603056619516,
+      "bias": 13.125694444444445,
+      "n_observations": 480,
+      "split": "test"
+    },
+    {
+      "model_name": "random_forest",
+      "mae": 33.556393412306214,
+      "rmse": 45.99253549997137,
+      "wape": 0.12216670209645403,
+      "bias": 7.0456539534252425,
+      "n_observations": 480,
+      "split": "test"
+    },
+    {
+      "model_name": "hist_gradient_boosting",
+      "mae": 29.664872040158222,
+      "rmse": 39.964532083773236,
+      "wape": 0.10799907906462851,
+      "bias": 4.721595177307186,
+      "n_observations": 480,
+      "split": "test"
+    }
+  ],
+  "tuning": [
+    {
+      "model_name": "random_forest",
+      "params": {
+        "max_depth": 12,
+        "min_samples_leaf": 2
+      },
+      "split": "validation",
+      "mae": 39.56124027665698,
+      "rmse": 52.482761665715735,
+      "wape": 0.13654127095134225,
+      "bias": 4.964359122211558,
+      "n_observations": 600
+    },
+    {
+      "model_name": "random_forest",
+      "params": {
+        "max_depth": null,
+        "min_samples_leaf": 4
+      },
+      "split": "validation",
+      "mae": 39.07428392111033,
+      "rmse": 51.846993193523346,
+      "wape": 0.1348605946323188,
+      "bias": 4.581631149539357,
+      "n_observations": 600
+    },
+    {
+      "model_name": "hist_gradient_boosting",
+      "params": {
+        "learning_rate": 0.06,
+        "max_leaf_nodes": 15
+      },
+      "split": "validation",
+      "mae": 39.50994523230303,
+      "rmse": 52.44921052825976,
+      "wape": 0.13636423174578108,
+      "bias": 5.983151259027387,
+      "n_observations": 600
+    },
+    {
+      "model_name": "hist_gradient_boosting",
+      "params": {
+        "learning_rate": 0.1,
+        "max_leaf_nodes": 31
+      },
+      "split": "validation",
+      "mae": 41.10939736452769,
+      "rmse": 55.340498591980285,
+      "wape": 0.1418845649161405,
+      "bias": 4.844247243595807,
+      "n_observations": 600
+    }
+  ],
+  "rolling_origin": [
+    {
+      "fold": 1,
+      "model_name": "seasonal_naive_30d",
+      "mae": 38.625,
+      "rmse": 50.377491667079525,
+      "wape": 0.13284989538249878,
+      "bias": -5.358333333333333,
+      "n_observations": 240
+    },
+    {
+      "fold": 1,
+      "model_name": "moving_average_90d",
+      "mae": 44.702777777777776,
+      "rmse": 60.734920396387736,
+      "wape": 0.153754287406728,
+      "bias": -14.402777777777775,
+      "n_observations": 240
+    },
+    {
+      "fold": 1,
+      "model_name": "random_forest",
+      "mae": 35.35483035875811,
+      "rmse": 48.04453994980301,
+      "wape": 0.12160221396574773,
+      "bias": -1.1596895596284582,
+      "n_observations": 240
+    },
+    {
+      "fold": 1,
+      "model_name": "hist_gradient_boosting",
+      "mae": 36.35807650795235,
+      "rmse": 49.0244454943025,
+      "wape": 0.12505285852143316,
+      "bias": -0.7360003606119687,
+      "n_observations": 240
+    },
+    {
+      "fold": 2,
+      "model_name": "seasonal_naive_30d",
+      "mae": 39.17916666666667,
+      "rmse": 51.642803629031086,
+      "wape": 0.13461125506420626,
+      "bias": -1.0458333333333334,
+      "n_observations": 240
+    },
+    {
+      "fold": 2,
+      "model_name": "moving_average_90d",
+      "mae": 56.836111111111116,
+      "rmse": 72.12042398347056,
+      "wape": 0.19527674783712465,
+      "bias": -7.369444444444451,
+      "n_observations": 240
+    },
+    {
+      "fold": 2,
+      "model_name": "random_forest",
+      "mae": 35.91299400268544,
+      "rmse": 47.198422092784675,
+      "wape": 0.12338938285606209,
+      "bias": 6.044561499432091,
+      "n_observations": 240
+    },
+    {
+      "fold": 2,
+      "model_name": "hist_gradient_boosting",
+      "mae": 34.031871464953866,
+      "rmse": 45.003497134300176,
+      "wape": 0.11692624728485432,
+      "bias": 5.934802150777792,
+      "n_observations": 240
+    },
+    {
+      "fold": 3,
+      "model_name": "seasonal_naive_30d",
+      "mae": 40.30416666666667,
+      "rmse": 53.44853443578536,
+      "wape": 0.140512194767653,
+      "bias": 4.395833333333333,
+      "n_observations": 240
+    },
+    {
+      "fold": 3,
+      "model_name": "moving_average_90d",
+      "mae": 63.094444444444434,
+      "rmse": 83.43458848436633,
+      "wape": 0.2199658149455508,
+      "bias": 1.7249999999999999,
+      "n_observations": 240
+    },
+    {
+      "fold": 3,
+      "model_name": "random_forest",
+      "mae": 37.906273006747384,
+      "rmse": 50.31296388027262,
+      "wape": 0.1321524312781536,
+      "bias": 7.355077050427574,
+      "n_observations": 240
+    },
+    {
+      "fold": 3,
+      "model_name": "hist_gradient_boosting",
+      "mae": 32.112107188801694,
+      "rmse": 43.541069003783704,
+      "wape": 0.11195226282756507,
+      "bias": 3.4141191915157436,
+      "n_observations": 240
+    }
+  ],
+  "baselines": [
+    {
+      "name": "seasonal_naive_30d",
+      "rule": "forecast = sum_30 (demand repeats the last 30 days)",
+      "fitted_parameters": 0
+    },
+    {
+      "name": "moving_average_90d",
+      "rule": "forecast = mean_90 * 30",
+      "fitted_parameters": 0
+    }
+  ],
+  "residual_quantiles": {
+    "p10": -48.426,
+    "p50": -5.9016,
+    "p90": 37.94,
+    "method": "empirical_test_residual_quantiles_10_90",
+    "n_residuals": 480
+  },
+  "notes": [
+    "All candidate models are scored on identical rows within each split.",
+    "WAPE is volume-weighted: sum(|error|) / sum(|actual|).",
+    "Overlapping 30-day target windows across origins induce autocorrelation; that is why selection uses the fold mean rather than one window.",
+    "Test metrics were produced after model selection and were not used to tune anything."
+  ]
+}

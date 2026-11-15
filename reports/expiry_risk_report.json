@@ -1,0 +1,255 @@
+{
+  "summary": {
+    "total_batches": 298,
+    "at_risk_batches": 24,
+    "estimated_unsold_units": 6058.2977,
+    "by_risk_level": {
+      "low": 282,
+      "medium": 4,
+      "high": 5,
+      "critical": 7
+    }
+  },
+  "metrics": {
+    "positive_class": "at_risk",
+    "threshold_rule": "at_risk if estimated_unsold_units > 0",
+    "policy_version": "risk-v1",
+    "n_batches": 101,
+    "n_censored_excluded": 197,
+    "precision": 0.8182,
+    "recall": 0.9,
+    "f1": 0.8571,
+    "accuracy": 0.9406,
+    "confusion": {
+      "true_positive": 18,
+      "false_positive": 4,
+      "true_negative": 77,
+      "false_negative": 2
+    },
+    "base_rate": 0.198,
+    "critical_band": {
+      "n_batches": 7,
+      "precision": 1.0,
+      "recall": 1.0,
+      "confusion": {
+        "true_positive": 7,
+        "false_positive": 0,
+        "true_negative": 0,
+        "false_negative": 0
+      }
+    },
+    "error_framing": {
+      "false_positive_cost": "Unnecessary rotation or markdown of stock that would have sold. Costs staff time and margin.",
+      "false_negative_cost": "Expired stock that was never flagged: full unit cost plus disposal. The expensive error for a pharmacy.",
+      "asymmetry_note": "Recall is prioritised for the critical band because a missed expiry costs more than an unnecessary rotation."
+    },
+    "evaluation_window": {
+      "start": "2025-10-02",
+      "end": "2025-12-31",
+      "days": 91
+    },
+    "label_definition": "at_risk = realised_unsold_units > 0 under FEFO allocation of actual sales observed between the assessment date and the batch expiry date"
+  },
+  "top_batches": [
+    {
+      "batch_id": "BATCH-0003-02",
+      "product_id": "MED-0003",
+      "remaining_quantity": 124.0,
+      "days_to_expiry": 54,
+      "allocatable_demand": 18.8146,
+      "unsold_quantity": 105.1854,
+      "risk_score": 0.8482693548387097,
+      "risk_level": "high"
+    },
+    {
+      "batch_id": "BATCH-0029-01",
+      "product_id": "MED-0029",
+      "remaining_quantity": 686.0,
+      "days_to_expiry": 16,
+      "allocatable_demand": 110.5847,
+      "unsold_quantity": 575.4153,
+      "risk_score": 0.8387978134110787,
+      "risk_level": "critical"
+    },
+    {
+      "batch_id": "BATCH-0050-01",
+      "product_id": "MED-0050",
+      "remaining_quantity": 1170.0,
+      "days_to_expiry": 13,
+      "allocatable_demand": 206.8583,
+      "unsold_quantity": 963.1417,
+      "risk_score": 0.8231980341880342,
+      "risk_level": "critical"
+    },
+    {
+      "batch_id": "BATCH-0046-01",
+      "product_id": "MED-0046",
+      "remaining_quantity": 520.0,
+      "days_to_expiry": 38,
+      "allocatable_demand": 116.8318,
+      "unsold_quantity": 403.1682,
+      "risk_score": 0.7753234615384615,
+      "risk_level": "high"
+    },
+    {
+      "batch_id": "BATCH-0073-01",
+      "product_id": "MED-0073",
+      "remaining_quantity": 304.0,
+      "days_to_expiry": 13,
+      "allocatable_demand": 68.6194,
+      "unsold_quantity": 235.3806,
+      "risk_score": 0.7742782894736842,
+      "risk_level": "critical"
+    },
+    {
+      "batch_id": "BATCH-0011-01",
+      "product_id": "MED-0011",
+      "remaining_quantity": 671.0,
+      "days_to_expiry": 30,
+      "allocatable_demand": 164.3004,
+      "unsold_quantity": 506.6996,
+      "risk_score": 0.7551409836065573,
+      "risk_level": "critical"
+    },
+    {
+      "batch_id": "BATCH-0080-01",
+      "product_id": "MED-0080",
+      "remaining_quantity": 769.0,
+      "days_to_expiry": 21,
+      "allocatable_demand": 214.3362,
+      "unsold_quantity": 554.6638,
+      "risk_score": 0.7212793237971392,
+      "risk_level": "critical"
+    },
+    {
+      "batch_id": "BATCH-0117-01",
+      "product_id": "MED-0117",
+      "remaining_quantity": 478.0,
+      "days_to_expiry": 32,
+      "allocatable_demand": 137.7705,
+      "unsold_quantity": 340.2295,
+      "risk_score": 0.7117771966527197,
+      "risk_level": "high"
+    },
+    {
+      "batch_id": "BATCH-0059-03",
+      "product_id": "MED-0059",
+      "remaining_quantity": 318.0,
+      "days_to_expiry": 124,
+      "allocatable_demand": 181.6604,
+      "unsold_quantity": 136.3396,
+      "risk_score": 0.42874088050314463,
+      "risk_level": "low"
+    },
+    {
+      "batch_id": "BATCH-0077-01",
+      "product_id": "MED-0077",
+      "remaining_quantity": 610.0,
+      "days_to_expiry": 24,
+      "allocatable_demand": 364.857,
+      "unsold_quantity": 245.143,
+      "risk_score": 0.4018737704918033,
+      "risk_level": "critical"
+    },
+    {
+      "batch_id": "BATCH-0002-01",
+      "product_id": "MED-0002",
+      "remaining_quantity": 2221.0,
+      "days_to_expiry": 53,
+      "allocatable_demand": 1333.5998,
+      "unsold_quantity": 887.4002,
+      "risk_score": 0.39954984241332736,
+      "risk_level": "medium"
+    },
+    {
+      "batch_id": "BATCH-0048-01",
+      "product_id": "MED-0048",
+      "remaining_quantity": 214.0,
+      "days_to_expiry": 13,
+      "allocatable_demand": 130.2172,
+      "unsold_quantity": 83.7828,
+      "risk_score": 0.3915084112149532,
+      "risk_level": "critical"
+    },
+    {
+      "batch_id": "BATCH-0023-03",
+      "product_id": "MED-0023",
+      "remaining_quantity": 40.0,
+      "days_to_expiry": 92,
+      "allocatable_demand": 26.5433,
+      "unsold_quantity": 13.4567,
+      "risk_score": 0.3364175,
+      "risk_level": "low"
+    },
+    {
+      "batch_id": "BATCH-0003-01",
+      "product_id": "MED-0003",
+      "remaining_quantity": 733.0,
+      "days_to_expiry": 52,
+      "allocatable_demand": 489.1798,
+      "unsold_quantity": 243.8202,
+      "risk_score": 0.3326332878581173,
+      "risk_level": "medium"
+    },
+    {
+      "batch_id": "BATCH-0033-01",
+      "product_id": "MED-0033",
+      "remaining_quantity": 121.0,
+      "days_to_expiry": 52,
+      "allocatable_demand": 86.1487,
+      "unsold_quantity": 34.8513,
+      "risk_score": 0.28802727272727274,
+      "risk_level": "medium"
+    },
+    {
+      "batch_id": "BATCH-0109-01",
+      "product_id": "MED-0109",
+      "remaining_quantity": 604.0,
+      "days_to_expiry": 85,
+      "allocatable_demand": 454.274,
+      "unsold_quantity": 149.726,
+      "risk_score": 0.2478907284768212,
+      "risk_level": "low"
+    },
+    {
+      "batch_id": "BATCH-0014-01",
+      "product_id": "MED-0014",
+      "remaining_quantity": 473.0,
+      "days_to_expiry": 76,
+      "allocatable_demand": 362.0098,
+      "unsold_quantity": 110.9902,
+      "risk_score": 0.23465158562367866,
+      "risk_level": "low"
+    },
+    {
+      "batch_id": "BATCH-0119-02",
+      "product_id": "MED-0119",
+      "remaining_quantity": 1299.0,
+      "days_to_expiry": 46,
+      "allocatable_demand": 1003.0034,
+      "unsold_quantity": 295.9966,
+      "risk_score": 0.22786497305619707,
+      "risk_level": "medium"
+    },
+    {
+      "batch_id": "BATCH-0023-02",
+      "product_id": "MED-0023",
+      "remaining_quantity": 136.0,
+      "days_to_expiry": 77,
+      "allocatable_demand": 111.2556,
+      "unsold_quantity": 24.7444,
+      "risk_score": 0.1819441176470588,
+      "risk_level": "low"
+    },
+    {
+      "batch_id": "BATCH-0040-01",
+      "product_id": "MED-0040",
+      "remaining_quantity": 889.0,
+      "days_to_expiry": 90,
+      "allocatable_demand": 781.8336,
+      "unsold_quantity": 107.1664,
+      "risk_score": 0.12054713160854892,
+      "risk_level": "low"
+    }
+  ]
+}

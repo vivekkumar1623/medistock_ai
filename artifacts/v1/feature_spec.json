@@ -1,0 +1,189 @@
+{
+  "feature_version": "fs-v1",
+  "target": "demand_next_30d",
+  "horizon_days": 30,
+  "lookback_days": 180,
+  "features": [
+    {
+      "name": "sum_7",
+      "dtype": "float64",
+      "role": "numeric"
+    },
+    {
+      "name": "sum_14",
+      "dtype": "float64",
+      "role": "numeric"
+    },
+    {
+      "name": "sum_30",
+      "dtype": "float64",
+      "role": "numeric"
+    },
+    {
+      "name": "sum_60",
+      "dtype": "float64",
+      "role": "numeric"
+    },
+    {
+      "name": "sum_90",
+      "dtype": "float64",
+      "role": "numeric"
+    },
+    {
+      "name": "sum_180",
+      "dtype": "float64",
+      "role": "numeric"
+    },
+    {
+      "name": "mean_7",
+      "dtype": "float64",
+      "role": "numeric"
+    },
+    {
+      "name": "mean_30",
+      "dtype": "float64",
+      "role": "numeric"
+    },
+    {
+      "name": "mean_90",
+      "dtype": "float64",
+      "role": "numeric"
+    },
+    {
+      "name": "std_30",
+      "dtype": "float64",
+      "role": "numeric"
+    },
+    {
+      "name": "std_90",
+      "dtype": "float64",
+      "role": "numeric"
+    },
+    {
+      "name": "cv_90",
+      "dtype": "float64",
+      "role": "numeric"
+    },
+    {
+      "name": "max_daily_90",
+      "dtype": "float64",
+      "role": "numeric"
+    },
+    {
+      "name": "ratio_7_30",
+      "dtype": "float64",
+      "role": "numeric"
+    },
+    {
+      "name": "ratio_30_90",
+      "dtype": "float64",
+      "role": "numeric"
+    },
+    {
+      "name": "trend_ratio",
+      "dtype": "float64",
+      "role": "numeric"
+    },
+    {
+      "name": "zero_ratio_30",
+      "dtype": "float64",
+      "role": "numeric"
+    },
+    {
+      "name": "zero_ratio_90",
+      "dtype": "float64",
+      "role": "numeric"
+    },
+    {
+      "name": "days_since_last_sale",
+      "dtype": "float64",
+      "role": "numeric"
+    },
+    {
+      "name": "origin_month",
+      "dtype": "float64",
+      "role": "numeric"
+    },
+    {
+      "name": "origin_quarter",
+      "dtype": "float64",
+      "role": "numeric"
+    },
+    {
+      "name": "origin_day_of_year",
+      "dtype": "float64",
+      "role": "numeric"
+    },
+    {
+      "name": "origin_is_q4",
+      "dtype": "float64",
+      "role": "numeric"
+    },
+    {
+      "name": "unit_price",
+      "dtype": "float64",
+      "role": "numeric"
+    },
+    {
+      "name": "unit_cost",
+      "dtype": "float64",
+      "role": "numeric"
+    },
+    {
+      "name": "margin_pct",
+      "dtype": "float64",
+      "role": "numeric"
+    },
+    {
+      "name": "lead_time_days",
+      "dtype": "float64",
+      "role": "numeric"
+    },
+    {
+      "name": "minimum_stock_level",
+      "dtype": "float64",
+      "role": "numeric"
+    },
+    {
+      "name": "category",
+      "dtype": "category",
+      "role": "categorical"
+    }
+  ],
+  "categorical_features": [
+    "category"
+  ],
+  "numeric_features": [
+    "sum_7",
+    "sum_14",
+    "sum_30",
+    "sum_60",
+    "sum_90",
+    "sum_180",
+    "mean_7",
+    "mean_30",
+    "mean_90",
+    "std_30",
+    "std_90",
+    "cv_90",
+    "max_daily_90",
+    "ratio_7_30",
+    "ratio_30_90",
+    "trend_ratio",
+    "zero_ratio_30",
+    "zero_ratio_90",
+    "days_since_last_sale",
+    "origin_month",
+    "origin_quarter",
+    "origin_day_of_year",
+    "origin_is_q4",
+    "unit_price",
+    "unit_cost",
+    "margin_pct",
+    "lead_time_days",
+    "minimum_stock_level"
+  ],
+  "excluded_by_design": {
+    "inventory_levels": "Only one inventory snapshot exists, so stock at earlier origins is unknowable. Stock is a decision input, not a demand feature (D-011)."
+  }
+}

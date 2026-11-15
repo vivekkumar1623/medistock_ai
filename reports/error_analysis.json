@@ -1,0 +1,265 @@
+{
+  "overall": {
+    "n": 480,
+    "mae": 29.665,
+    "rmse": 39.965,
+    "wape": 0.108,
+    "bias": 4.722
+  },
+  "by_category": [
+    {
+      "group": "Antibiotics",
+      "n": 60,
+      "mae": 21.91,
+      "rmse": 26.42,
+      "wape": 0.1847,
+      "bias": 13.85
+    },
+    {
+      "group": "Antihistamines",
+      "n": 60,
+      "mae": 40.83,
+      "rmse": 52.12,
+      "wape": 0.1825,
+      "bias": 34.44
+    },
+    {
+      "group": "Dermatology",
+      "n": 60,
+      "mae": 21.73,
+      "rmse": 29.95,
+      "wape": 0.1209,
+      "bias": -11.65
+    },
+    {
+      "group": "Vitamins & Supplements",
+      "n": 60,
+      "mae": 33.12,
+      "rmse": 40.59,
+      "wape": 0.1206,
+      "bias": 23.26
+    },
+    {
+      "group": "Cardiovascular",
+      "n": 60,
+      "mae": 33.17,
+      "rmse": 41.69,
+      "wape": 0.1186,
+      "bias": -5.26
+    },
+    {
+      "group": "Diabetes Care",
+      "n": 60,
+      "mae": 19.11,
+      "rmse": 23.62,
+      "wape": 0.0858,
+      "bias": -4.52
+    },
+    {
+      "group": "Gastrointestinal",
+      "n": 60,
+      "mae": 27.53,
+      "rmse": 35.47,
+      "wape": 0.0841,
+      "bias": 5.68
+    },
+    {
+      "group": "Analgesics",
+      "n": 60,
+      "mae": 39.92,
+      "rmse": 57.13,
+      "wape": 0.0699,
+      "bias": -18.02
+    }
+  ],
+  "by_demand_decile": [
+    {
+      "group": "D1",
+      "n": 48,
+      "mae": 21.69,
+      "rmse": 27.88,
+      "wape": 0.3094,
+      "bias": 18.65
+    },
+    {
+      "group": "D4",
+      "n": 48,
+      "mae": 30.78,
+      "rmse": 36.92,
+      "wape": 0.1722,
+      "bias": 9.63
+    },
+    {
+      "group": "D3",
+      "n": 48,
+      "mae": 23.76,
+      "rmse": 30.94,
+      "wape": 0.1588,
+      "bias": 8.08
+    },
+    {
+      "group": "D2",
+      "n": 48,
+      "mae": 18.88,
+      "rmse": 23.24,
+      "wape": 0.1558,
+      "bias": 4.67
+    },
+    {
+      "group": "D5",
+      "n": 48,
+      "mae": 30.78,
+      "rmse": 40.68,
+      "wape": 0.1422,
+      "bias": 14.44
+    },
+    {
+      "group": "D8",
+      "n": 48,
+      "mae": 34.17,
+      "rmse": 42.13,
+      "wape": 0.1021,
+      "bias": -2.72
+    },
+    {
+      "group": "D6",
+      "n": 48,
+      "mae": 24.82,
+      "rmse": 33.1,
+      "wape": 0.1008,
+      "bias": 7.97
+    },
+    {
+      "group": "D7",
+      "n": 48,
+      "mae": 26.54,
+      "rmse": 33.64,
+      "wape": 0.0936,
+      "bias": 7.65
+    },
+    {
+      "group": "D10",
+      "n": 48,
+      "mae": 53.16,
+      "rmse": 70.46,
+      "wape": 0.0772,
+      "bias": -22.3
+    },
+    {
+      "group": "D9",
+      "n": 48,
+      "mae": 32.07,
+      "rmse": 41.39,
+      "wape": 0.0701,
+      "bias": 1.14
+    }
+  ],
+  "by_sparsity": [
+    {
+      "group": "sparse (>25%)",
+      "n": 56,
+      "mae": 33.85,
+      "rmse": 41.96,
+      "wape": 0.2551,
+      "bias": 7.68
+    },
+    {
+      "group": "moderate (5-25%)",
+      "n": 11,
+      "mae": 12.6,
+      "rmse": 15.77,
+      "wape": 0.1723,
+      "bias": 4.68
+    },
+    {
+      "group": "dense (<5% zero days)",
+      "n": 413,
+      "mae": 29.55,
+      "rmse": 40.14,
+      "wape": 0.0987,
+      "bias": 4.32
+    }
+  ],
+  "worst_predictions": [
+    {
+      "product_id": "MED-0042",
+      "origin_date": "2025-09-10 00:00:00",
+      "category": "Analgesics",
+      "demand_next_30d": 887.0,
+      "prediction": 661.12,
+      "residual": -225.88
+    },
+    {
+      "product_id": "MED-0042",
+      "origin_date": "2025-09-24 00:00:00",
+      "category": "Analgesics",
+      "demand_next_30d": 874.0,
+      "prediction": 708.05,
+      "residual": -165.95
+    },
+    {
+      "product_id": "MED-0043",
+      "origin_date": "2025-08-27 00:00:00",
+      "category": "Antihistamines",
+      "demand_next_30d": 613.0,
+      "prediction": 770.33,
+      "residual": 157.33
+    },
+    {
+      "product_id": "MED-0034",
+      "origin_date": "2025-09-24 00:00:00",
+      "category": "Analgesics",
+      "demand_next_30d": 1157.0,
+      "prediction": 1005.81,
+      "residual": -151.19
+    },
+    {
+      "product_id": "MED-0043",
+      "origin_date": "2025-09-10 00:00:00",
+      "category": "Antihistamines",
+      "demand_next_30d": 567.0,
+      "prediction": 691.18,
+      "residual": 124.18
+    },
+    {
+      "product_id": "MED-0115",
+      "origin_date": "2025-09-24 00:00:00",
+      "category": "Antihistamines",
+      "demand_next_30d": 218.0,
+      "prediction": 338.11,
+      "residual": 120.11
+    },
+    {
+      "product_id": "MED-0108",
+      "origin_date": "2025-08-27 00:00:00",
+      "category": "Cardiovascular",
+      "demand_next_30d": 200.0,
+      "prediction": 315.68,
+      "residual": 115.68
+    },
+    {
+      "product_id": "MED-0082",
+      "origin_date": "2025-09-24 00:00:00",
+      "category": "Analgesics",
+      "demand_next_30d": 517.0,
+      "prediction": 615.92,
+      "residual": 98.92
+    },
+    {
+      "product_id": "MED-0015",
+      "origin_date": "2025-08-27 00:00:00",
+      "category": "Gastrointestinal",
+      "demand_next_30d": 568.0,
+      "prediction": 472.07,
+      "residual": -95.93
+    },
+    {
+      "product_id": "MED-0079",
+      "origin_date": "2025-09-24 00:00:00",
+      "category": "Gastrointestinal",
+      "demand_next_30d": 158.0,
+      "prediction": 251.13,
+      "residual": 93.13
+    }
+  ]
+}

@@ -1,0 +1,98 @@
+{
+  "method": "permutation_importance_test_set",
+  "scoring": "neg_mean_absolute_error",
+  "n_repeats": 5,
+  "n_features": 29,
+  "features": [
+    {
+      "feature": "sum_30",
+      "importance": 65.73851300401816,
+      "importance_std": 2.817162066844059,
+      "share": 0.5038
+    },
+    {
+      "feature": "sum_14",
+      "importance": 26.944544151238595,
+      "importance_std": 1.743622017887722,
+      "share": 0.2065
+    },
+    {
+      "feature": "minimum_stock_level",
+      "importance": 8.241281276110879,
+      "importance_std": 0.7594829968755784,
+      "share": 0.0632
+    },
+    {
+      "feature": "sum_7",
+      "importance": 6.396567999075359,
+      "importance_std": 0.3253559144475011,
+      "share": 0.049
+    },
+    {
+      "feature": "ratio_30_90",
+      "importance": 5.137517209640423,
+      "importance_std": 0.5640027953022497,
+      "share": 0.0394
+    },
+    {
+      "feature": "sum_60",
+      "importance": 4.580420116410757,
+      "importance_std": 0.745137136553737,
+      "share": 0.0351
+    },
+    {
+      "feature": "lead_time_days",
+      "importance": 4.48304699710272,
+      "importance_std": 0.41332994117691607,
+      "share": 0.0344
+    },
+    {
+      "feature": "category",
+      "importance": 2.9271941573662077,
+      "importance_std": 0.24568513402292558,
+      "share": 0.0224
+    },
+    {
+      "feature": "cv_90",
+      "importance": 1.5717596074680267,
+      "importance_std": 0.36314803941484447,
+      "share": 0.012
+    },
+    {
+      "feature": "std_30",
+      "importance": 1.4666564769523205,
+      "importance_std": 0.4018072458724867,
+      "share": 0.0112
+    },
+    {
+      "feature": "sum_180",
+      "importance": 1.0967298895594666,
+      "importance_std": 0.17585797471846654,
+      "share": 0.0084
+    },
+    {
+      "feature": "sum_90",
+      "importance": 0.5169787109632565,
+      "importance_std": 0.09931069661750516,
+      "share": 0.004
+    },
+    {
+      "feature": "unit_price",
+      "importance": 0.48561448212266073,
+      "importance_std": 0.14278248961484677,
+      "share": 0.0037
+    },
+    {
+      "feature": "max_daily_90",
+      "importance": 0.4734851182026418,
+      "importance_std": 0.1252721416581365,
+      "share": 0.0036
+    },
+    {
+      "feature": "zero_ratio_30",
+      "importance": 0.43146640424300886,
+      "importance_std": 0.09590778347218183,
+      "share": 0.0033
+    }
+  ]
+}

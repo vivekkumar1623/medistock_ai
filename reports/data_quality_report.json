@@ -1,0 +1,59 @@
+{
+  "raw": {
+    "is_valid": true,
+    "error_count": 0,
+    "warning_count": 1,
+    "row_counts": {
+      "products": 120,
+      "sales": 67558,
+      "inventory": 120,
+      "batches": 298,
+      "demand_panel": 73200
+    },
+    "checks_run": 1,
+    "issues": [
+      {
+        "check": "sales.price_below_cost",
+        "severity": "warning",
+        "table": "sales",
+        "message": "selling_price below unit_cost (margin erosion, plausible with promotions).",
+        "count": 46,
+        "sample": []
+      }
+    ]
+  },
+  "after_cleaning": {
+    "is_valid": true,
+    "error_count": 0,
+    "warning_count": 1,
+    "row_counts": {
+      "products": 120,
+      "sales": 67558,
+      "inventory": 120,
+      "batches": 298,
+      "demand_panel": 73200
+    },
+    "checks_run": 1,
+    "issues": [
+      {
+        "check": "sales.price_below_cost",
+        "severity": "warning",
+        "table": "sales",
+        "message": "selling_price below unit_cost (margin erosion, plausible with promotions).",
+        "count": 46,
+        "sample": []
+      }
+    ]
+  },
+  "cleaning": {
+    "actions": [],
+    "total_rows_affected": 0,
+    "row_counts": {
+      "products": 120,
+      "sales": 67558,
+      "inventory": 120,
+      "batches": 298,
+      "demand_panel": 73200
+    }
+  }
+}

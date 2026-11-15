@@ -1,0 +1,40 @@
+{
+  "positive_class": "at_risk",
+  "threshold_rule": "at_risk if estimated_unsold_units > 0",
+  "policy_version": "risk-v1",
+  "n_batches": 101,
+  "n_censored_excluded": 197,
+  "precision": 0.8182,
+  "recall": 0.9,
+  "f1": 0.8571,
+  "accuracy": 0.9406,
+  "confusion": {
+    "true_positive": 18,
+    "false_positive": 4,
+    "true_negative": 77,
+    "false_negative": 2
+  },
+  "base_rate": 0.198,
+  "critical_band": {
+    "n_batches": 7,
+    "precision": 1.0,
+    "recall": 1.0,
+    "confusion": {
+      "true_positive": 7,
+      "false_positive": 0,
+      "true_negative": 0,
+      "false_negative": 0
+    }
+  },
+  "error_framing": {
+    "false_positive_cost": "Unnecessary rotation or markdown of stock that would have sold. Costs staff time and margin.",
+    "false_negative_cost": "Expired stock that was never flagged: full unit cost plus disposal. The expensive error for a pharmacy.",
+    "asymmetry_note": "Recall is prioritised for the critical band because a missed expiry costs more than an unnecessary rotation."
+  },
+  "evaluation_window": {
+    "start": "2025-10-02",
+    "end": "2025-12-31",
+    "days": 91
+  },
+  "label_definition": "at_risk = realised_unsold_units > 0 under FEFO allocation of actual sales observed between the assessment date and the batch expiry date"
+}

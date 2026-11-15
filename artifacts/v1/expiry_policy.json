@@ -1,0 +1,47 @@
+{
+  "policy_version": "risk-v1",
+  "allocation": "FEFO",
+  "tie_break": "batch_id ascending on equal expiry dates",
+  "risk_rule": "estimated_unsold_units > 0",
+  "severity_table": {
+    "rows": "unsold ratio bands",
+    "columns": "days to expiry bands",
+    "bands": {
+      "critical_days": 30,
+      "high_days": 60,
+      "medium_days": 90
+    },
+    "cell_rules": {
+      "days<=critical": {
+        "ratio>0.25": "critical",
+        "else": "high"
+      },
+      "days<=high": {
+        "ratio>0.50": "high",
+        "else": "medium"
+      },
+      "days<=medium": {
+        "ratio>0.50": "critical",
+        "ratio>0.25": "medium",
+        "else": "low"
+      },
+      "days>medium": {
+        "ratio>0.75": "high",
+        "ratio>0.50": "medium",
+        "else": "low"
+      },
+      "ratio==0": "low"
+    }
+  },
+  "demand_extrapolation": {
+    "method": "forecast_horizon_total / horizon_days",
+    "max_extrapolation_days": 365,
+    "note": "Demand is assumed to continue at the forecast daily rate."
+  },
+  "label_definition": "at_risk = realised_unsold_units > 0 under FEFO allocation of actual sales observed between the assessment date and the batch expiry date",
+  "evaluation_window": {
+    "start": "2025-10-02",
+    "end": "2025-12-31",
+    "days": 91
+  }
+}
