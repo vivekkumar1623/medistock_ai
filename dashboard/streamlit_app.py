@@ -42,19 +42,51 @@ st.set_page_config(
 PAGES = {
     "Analytics": [
         st.Page(
-            executive.render, title="Executive Overview", icon=":material/dashboard:", default=True
+            executive.render,
+            title="Executive Overview",
+            icon=":material/dashboard:",
+            url_path="executive-overview",
+            default=True,
         ),
-        st.Page(forecasting.render, title="Demand Forecasting", icon=":material/trending_up:"),
-        st.Page(expiry.render, title="Expiry Intelligence", icon=":material/event_busy:"),
-        st.Page(inventory.render, title="Inventory Optimisation", icon=":material/inventory_2:"),
-        st.Page(product_explorer.render, title="Product Explorer", icon=":material/search:"),
+        st.Page(
+            forecasting.render,
+            title="Demand Forecasting",
+            icon=":material/trending_up:",
+            url_path="demand-forecasting",
+        ),
+        st.Page(
+            expiry.render,
+            title="Expiry Intelligence",
+            icon=":material/event_busy:",
+            url_path="expiry-intelligence",
+        ),
+        st.Page(
+            inventory.render,
+            title="Inventory Optimisation",
+            icon=":material/inventory_2:",
+            url_path="inventory-optimisation",
+        ),
+        st.Page(
+            product_explorer.render,
+            title="Product Explorer",
+            icon=":material/search:",
+            url_path="product-explorer",
+        ),
     ],
     "Model": [
-        st.Page(model_performance.render, title="Model Performance", icon=":material/monitoring:"),
+        st.Page(
+            model_performance.render,
+            title="Model Performance",
+            icon=":material/monitoring:",
+            url_path="model-performance",
+        ),
     ],
     "System": [
         st.Page(
-            system_health.render, title="Data Quality & Health", icon=":material/health_and_safety:"
+            system_health.render,
+            title="Data Quality & Health",
+            icon=":material/health_and_safety:",
+            url_path="data-quality-health",
         ),
     ],
 }
